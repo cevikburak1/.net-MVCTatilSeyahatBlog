@@ -1,0 +1,32 @@
+﻿@using MVC5_Tatil_Sehayat.Models.Sınıflar
+@model List<Yorumlar>
+
+@{
+    ViewBag.Title = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorumlar</h2>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Kullanıcı Adı</td>
+            <td>Mail</td>
+            <td>Yorum</td>
+            <td>Sil</td>
+            <td>Güncelle</td>
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+        <tr>
+        <td>@x.KullaniciAdi</td>
+        <td>@x.Mail</td>
+        <td>@x.Yorum</td>
+        <td><a href="/Admin/YorumSil/@x.ID" class="btn btn-warning" style="background-color:darkorchid">Sil</a></td>
+        <td><a href="/Admin/YorumGetir/@x.ID" class="btn btn-warning" style="background-color:coral">Güncelle</a></td>
+        </tr>
+
+    }
+</table>

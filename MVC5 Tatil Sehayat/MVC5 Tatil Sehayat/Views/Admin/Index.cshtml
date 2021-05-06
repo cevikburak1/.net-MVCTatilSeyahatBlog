@@ -1,0 +1,39 @@
+﻿@using MVC5_Tatil_Sehayat.Models.Sınıflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Bloglar</h2>
+<br />
+<table class=" table table-bordered" >
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Baslık</td>
+            <td>Tarih</td>
+            <td>Acıklama</td>
+            <td>Resim</td>
+            <td>Sil</td>
+            <td>Güncelle</td>
+           
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Baslik</td>
+            <td>@x.Tarih.ToShortDateString()</td>
+            <td>@x.Aciklama.Substring(0,100)</td>
+            <td>@x.BlogImage</td>
+            <td><a href="/Admin/BlogSil/@x.ID" class="btn btn-warning" style="background-color:darkorchid">Sil</a></td>
+            <td><a href="/Admin/BlogGetir/@x.ID" class="btn btn-warning" style="background-color:coral">Güncelle</a></td>
+         
+        </tr>
+    }
+
+</table>
+<td><a href="/Admin/BlogEkle" class="btn btn-warning" style="background-color:darkorange">Yeni Blog Ekle</a></td>
+

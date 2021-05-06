@@ -1,0 +1,19 @@
+﻿@using MVC5_Tatil_Sehayat.Models.Sınıflar
+@model List<Blog>
+
+<div class="right">
+    @foreach (var x in Model)
+    {
+        <div class="bot-left">
+
+            <img src="@x.BlogImage" alt="" />
+        </div>
+        <div class="left-text">
+
+            <h4>@x.Baslik</h4>
+            <span class="doller">$924.99</span>
+            <p>@x.Aciklama.Substring(0,100)</p>
+            <p><a href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+        </div>
+    }
+</div>

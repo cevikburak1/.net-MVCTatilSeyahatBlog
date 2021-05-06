@@ -1,0 +1,32 @@
+﻿@model MVC5_Tatil_Sehayat.Models.Sınıflar.Blog
+@{
+    ViewBag.Title = "BlogEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<h2>Blog Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <label>Blog Başlıgı</label>
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    <label>Blog Tarihi</label>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+
+    <br />
+    <label>Blog Resim Linki</label>
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    <br />
+    <label>Blog Açıklama</label>
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })  
+    <br />
+    <button class="btn btn-success" id="btn1">Ekle</button>
+    <script>
+        $('#btn1').click(function () {
+            alert("Kategori Eklendi");
+        })
+    </script>
+</form>
+

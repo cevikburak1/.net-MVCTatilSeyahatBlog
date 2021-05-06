@@ -1,0 +1,22 @@
+﻿@using MVC5_Tatil_Sehayat.Models.Sınıflar
+@model List<Hakkımızda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>Hakkımıda</h3>
+            @foreach (var x in Model)
+            {
+                <img src="@x.FotoURL" alt="" />
+
+                <p>@x.Acıklama</p>
+            }
+        </div>
+    </div>
+  
+</div>
+
